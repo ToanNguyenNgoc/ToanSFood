@@ -1,0 +1,16 @@
+.dialog-suc{
+      display: flex;
+      flex-direction: column;
+}
+.dialog-suc span{
+      color: var(--primary-color);
+      font-size: 1.8rem;
+      margin-bottom: 15px;
+}
+.dialog-suc button{
+      border: none;
+      outline: none;
+      background-color: transparent;
+      color: var(--primary-color);
+      font-size: 2.2rem;
+}

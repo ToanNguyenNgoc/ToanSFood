@@ -1,0 +1,122 @@
+<div class="header" id="header-top">
+  <div class="grid">
+      <div class="header__nav">
+          <ul class="header__nav-list">
+              <li class="header__nav-item header__nav-item-qr">STORE
+                  <div class="header__qr">
+                      <img src="../../assets/img/d91264e165ed6facc6178994d5afae79.png" alt="QR Code"
+                          class="header__qr--img">
+                  </div>
+              </li>
+              <li class="header__nav-item"><span class="no-poiter" style="color: aliceblue;">Connect</span>
+              </li>
+              <li class="header__nav-item">
+                  <a href="" class="header__nav-icon-link">
+                      <i class=" header__nav--icon fab fa-facebook"></i>
+                  </a>
+                  <a href="" class="header__nav-icon-link">
+                      <i class="header__nav--icon fab fa-instagram"></i>
+                  </a>
+              </li>
+          </ul>
+          <ul class="header__nav-list">
+              <li class="header__nav-item"><i class=" header__nav--icon fas fa-question-circle"></i>Help
+              </li>
+              <li class="header__nav-item header__nav-name">
+                  <div class="header__user-profile">
+                      <i class="header__nav--icon fas fa-user-circle"></i>
+                      Toan06011998
+                      <div class="header__profile-box">
+                          <ul class="header__profile-list">
+                              <li class="header__profile-item">
+                                  <a href="#" class="header__profile-link">My Account</a>
+                              </li>
+                              <li class="header__profile-item">
+                                  <a routerLink="/cart"  class="header__profile-link">My Order</a>
+                              </li>
+                              <li class="header__profile-item">
+                                  <a href="#" class="header__profile-link">Log Out</a>
+                              </li>
+                          </ul>
+                      </div>
+                  </div>
+              </li>
+              <li class="header__nav-item">
+                  <a routerLink="/login">Login</a>
+              </li>
+          </ul>
+      </div>
+      <!-- Searching -->
+      <div class="header__searching">
+          <div class="header__searching-container">
+              <div class="header__logo">
+                  <div class="header__logo-icon">
+                      <a class="header__logo-icon-link" [routerLink]="['/']"><i class="fab fa-cc-amex"></i></a>
+                      <a routerLink="/" class="header__logo-icon-back"><i class="fas fa-home"></i></a>
+                  </div>
+              </div>
+              <app-searching></app-searching>
+              <div class="header__cart">
+                  <a routerLink="/cart" class="header__cart-link header__cart-link-icon">
+                    <mat-icon matBadge="{{itemsNumber}}" matBadgeColor="warn">shopping_cart</mat-icon>
+                  </a>
+                  <div class="header__cart-box">
+                      <div class="header__cart-heading">
+                          <h3>New Order</h3>
+                      </div>
+                      <ul class="header__cart-list">
+                          <li class="header__cart-item" *ngFor="let item of headerCartList">
+                              <a routerLink="/cart" class="header__cart-link">
+                                  <img *ngIf="item?.imgUrl" src="{{item.imgUrl}}"
+                                      alt="" class="header__cart-img">
+                                  <div class="header__cart-info">
+                                      <span class="header__cart-name">{{item.name}}</span>
+                                      <span class="header__cart-name">x{{item.quantity}}</span>
+                                      <span class="header__cart-price">{{item.quantity * item.discount | currency:"VND":"symbol"}}</span>
+                                  </div>
+                              </a>
+                          </li>
+                      </ul>
+                      <div class="header__cart-footer">
+                          <div class="header__cart-footer-content">
+                              <h3 class="header__cart-footer-quantity">{{itemsNumber}} Items</h3>
+                          <a routerLink="/cart">
+                              <button class="btn btn--primary btn--cart">Go to Order</button>
+                          </a>
+                          </div>
+                      </div>
+
+                  </div>
+              </div>
+              <div class="header__sort">
+                  <button class="header__cart-sort-icon" onclick="openMenu()">
+                      <i class="fas fa-ellipsis-h"></i>
+                  </button> 
+              </div>
+          </div>
+          <div class="header__user--mobile">
+              <a routerLink="/cart" class="btn btn--primary btn-user__mobile cart-mobile">
+                <i class="fas fa-shopping-cart"></i><div>{{itemsNumber}}</div>
+              </a>
+              <button onclick="openUserBox()" class="btn btn--primary btn-user__mobile"><i class="far fa-user-circle" style="margin-right: 4px;font-size: 28px;"></i></button>
+          </div>
+          <div class="modal"onclick="closeAllModal()">
+              <div class="modal__overplay">
+
+              </div>
+              <div class="modal__body">
+                  <div class="model__inner">
+                      <div class="user__mobile--box">
+                          <div class="user__mobile--box__name">Toan06011998</div>
+                          <ul class="user__mobile--sign-up-in">
+                              <li><a class="sign--link" routerLink="/login">Login</a></li>
+                              <li><a class="sign--link" href="#">Logout</a></li>
+                          </ul>
+                          <button onclick="closeAllModal()" class="btn btn--primary btn-close-user">Close</button>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>

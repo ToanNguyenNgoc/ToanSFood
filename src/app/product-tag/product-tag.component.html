@@ -1,0 +1,5 @@
+<div class="product__body-discount width" *ngIf="foodTag">
+  <a *ngFor="let item of foodTag" routerLink="/category/{{item}}" class="product__body-discount__title">
+   {{item}}
+  </a>
+</div>

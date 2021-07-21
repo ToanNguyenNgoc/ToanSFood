@@ -1,0 +1,48 @@
+.payment{
+      padding-bottom: 100px;
+}
+.m-t{
+      margin-top: 110px;
+}
+.payment-info{
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+}
+.form-info{
+      width: 50%;
+      padding: 10px 10px;
+}
+.payment-info__text{
+      width: 50%;
+      padding: 10px 10px;
+}
+.form-info button{
+      background-color: var(--primary-color);
+      width: 100%;
+}
+.alert-success ul li{
+      color: black;
+      list-style: none;
+      margin: 10px 0px;
+      font-size: 1.8rem;
+}
+@media only screen and (max-width: 739px){
+      .m-t{
+            margin-top: 60px;
+            margin-bottom: 0px;
+      }
+      .payment-info{
+            flex-direction: column-reverse;
+      }
+      .payment-info__text{
+            padding: 0px 0px;
+      }
+      .form-info{
+            width: 100%;
+      }
+      .payment-info__text{
+            width: 100%;
+      }
+}

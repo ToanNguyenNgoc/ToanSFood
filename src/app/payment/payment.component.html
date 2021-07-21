@@ -1,0 +1,56 @@
+<app-header></app-header>
+<div class="grid">
+  <div class="payment">
+    <div class="alert alert-success m-t" role="alert">
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Product Name</th>
+            <th scope="col">Quantity</th>
+            <th scope="col">Price</th>
+            <th scope="col">Discount</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of list">
+            <th scope="row">{{item.id}}</th>
+            <th>{{item.name}}</th>
+            <th>{{item.quantity}}</th>
+            <th style="text-decoration: line-through;">{{item.quantity * item.price | currency:"VND":"symbol"}}</th>
+            <th>{{item.quantity * item.discount | currency:"VND":"symbol"}}</th>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="payment-info">
+      <div class="form-info">
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Name</mat-label>
+          <input matInput placeholder="EX.Joe..." [(ngModel)]="fullName">
+        </mat-form-field>
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Phone Number</mat-label>
+          <input matInput placeholder="Ex.+(84)..." [(ngModel)]="phoneNumber">
+        </mat-form-field>
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Address</mat-label>
+          <input matInput placeholder="EX...." [(ngModel)]="address">
+        </mat-form-field>
+        <button (click)="submit()" type="button" class="btn btn-success">Payment</button>
+      </div>
+      <div class="payment-info__text">
+        <div class="alert alert-success" role="alert">
+          <ul>
+            <li>Payment Details</li>
+            <li>Full Name : {{fullName}}</li>
+            <li>Phone Number : {{phoneNumber}}</li>
+            <li>Address : {{address}}</li>
+            <li>Total Item : {{totalItem}}</li>
+            <li>Total Payment : {{totalPayment | currency:"VND":"symbol"}}</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,14 @@
+<nav class="category" *ngIf="tags">
+  <div class="category__heading">
+    <span><i class="fas fa-list-ul"></i>Menu</span>
+    <button onclick="closeMenu()"><i class="fas fa-times"></i></button>
+  </div>
+  <ul class="category-list">
+    <li class="category-item">
+      <a onclick="closeMenu()" routerLink="/" class="category-item__link">All</a>
+    </li>
+    <li class="category-item" *ngFor="let tag of tags">
+      <a onclick="closeMenu()" routerLink="/category/{{tag.name}}" class="category-item__link">{{tag.name}}</a>
+    </li>
+  </ul>
+</nav>

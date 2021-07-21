@@ -1,0 +1,28 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.ngx-pagination{
+      margin-top: 20px !important;
+      display: flex !important;
+      flex-direction: row !important;
+      justify-content: center !important;
+}
+.ngx-pagination .current{
+      padding: 2px 8px !important;
+      background-color: var(--primary-color) !important;
+      border-radius: 100% !important;
+}
+.ngx-pagination .show-for-sr{
+      color: var(--primary-color) !important;
+}   
+.material-icons{
+      font-size: 34px !important;
+}
+.mat-form-field{
+      width: 100% !important;
+}
+.mat-form-field-infix{
+      width: 100% !important;
+}
